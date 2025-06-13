@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바 스크립트 계산기</title>
+<style>
+	h2 {
+		border-radius: 5px;
+		text-align: left;
+		padding: 15px 0;
+	}
+	button{
+		font-weight: bold;
+	}
+	#regform {
+		padding: 15px 20px;
+		border-radius: 10px;
+		width: 50%;
+		background-color: SandyBrown;
+	}
+	#regform input{
+		text-align: center;
+	}
+	.delButton{
+		float: right;
+	}
+	.plus{
+		color: red;
+	}
+	.minus{
+		color: yellow;
+	}
+	.multiple{
+		color: green;
+	}
+	.divs{
+		color: blue;
+	}
+</style>
+<script>
+	function reset(){
+		document.getElementById("num1").value = "";
+		document.getElementById("num2").value = "";
+		document.getElementsByClassName("result")[0].innerHTML = "";
+		document.getElementsByClassName("res")[0].style.color = "black";
+	}
+	
+	function testBlank() {
+		var num1 = document.getElementById("num1").value;
+		var num2 = document.getElementById("num2").value;
+	
+		if (num1 === "" || num1 === " " || num2 === "" || num2 === " ") {
+			alert("정수를 입력하세요.");
+			reset();
+			return false; // 입력이 없으면 계산을 하지 않도록
+		}
+		return true; // 입력이 있으면 계산을 진행
+	}
+	
+	function plus(){
+		if (!testBlank()) return;
+		var num1 = parseFloat(document.getElementById("num1").value);
+		var num2 = parseFloat(document.getElementById("num2").value);
+		var result = num1 + num2;
+		document.getElementsByClassName("result")[0].innerHTML = num1 + " + " + num2 + " = " + result;
+		document.getElementsByClassName("result")[0].style.color = "red";
+		document.getElementsByClassName("res")[0].style.color = "red";
+	}
+			
+	function minus(){
+		if (!testBlank()) return;
+		var num1 = parseFloat(document.getElementById("num1").value);
+		var num2 = parseFloat(document.getElementById("num2").value);
+		var result = num1 - num2;
+		document.getElementsByClassName("result")[0].innerHTML = num1 + " - " + num2 + " = " + result;
+		document.getElementsByClassName("result")[0].style.color = "yellow";
+		document.getElementsByClassName("res")[0].style.color = "yellow";
+	}
+			
+	function multiple(){
+		if (!testBlank()) return;
+		var num1 = parseFloat(document.getElementById("num1").value);
+		var num2 = parseFloat(document.getElementById("num2").value);
+		var result = num1 * num2;
+		document.getElementsByClassName("result")[0].innerHTML = num1 + " * " + num2 + " = " + result;
+		document.getElementsByClassName("result")[0].style.color = "green";
+		document.getElementsByClassName("res")[0].style.color = "green";
+	}
+			
+	function divs(){
+		if (!testBlank()) return;
+		var num1 = parseFloat(document.getElementById("num1").value);
+		var num2 = parseFloat(document.getElementById("num2").value);
+		var result = num1 / num2;
+		document.getElementsByClassName("result")[0].innerHTML = num1 + " / " + num2 + " = " + result;
+		document.getElementsByClassName("result")[0].style.color = "blue";
+		document.getElementsByClassName("res")[0].style.color = "blue";
+	}
+</script>
+</head>
+<body>
+	<h2>자바스크립트 계산기</h2>
+	<br>
+	<div id="regform">
+		<hr>
+			<input type="text" name="num1" size="40" id="num1" placeholder="정수 입력" ><br>
+			<input type="text" name="num2" size="40" id="num2" placeholder="정수 입력">
+			<hr>
+			<button type="button" onClick="plus()" class="plus">&nbsp; + &nbsp;</button>
+			<button type="button" onClick="minus()" class="minus">&nbsp; - &nbsp;</button>
+			<button type="button" onClick="multiple()" class="multiple">&nbsp; * &nbsp;</button>
+			<button type="button" onClick="divs()" class="divs">&nbsp; / &nbsp;</button>
+			<hr>
+			<label class="res">계산결과: </label><label class="result"></label>
+			<button type="button" class="delButton" onClick="reset()">삭제</button>
+	</div>
+</body>
+</html>

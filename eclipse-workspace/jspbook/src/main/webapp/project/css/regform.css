@@ -1,0 +1,20 @@
+h2 {
+	border-radius: 5px;
+	background-color: wheat;
+	text-align: center;
+	padding: 15px 0;
+}
+
+#regform {
+	padding: 15px 20px;
+	border-radius: 10px;
+	margin: auto;
+	width: 50%;
+	background-color: SandyBrown;
+}
+
+.error {
+	color: red;
+	font-size: 0.8em;
+	display: none;
+} 

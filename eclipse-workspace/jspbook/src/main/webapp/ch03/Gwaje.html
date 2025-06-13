@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원 가입 폼 만들기 예제</title>
+<style>
+	h2 {
+		border-radius: 5px;
+		text-align: left;
+		padding: 15px 0;
+	}
+	#regform {
+		padding: 15px 20px;
+		border-radius: 10px;
+		width: 50%;
+		background-color: SandyBrown;
+	}
+	.delButton{
+		float: right;
+	}
+	#inCenter{
+		text-align: center;
+	}
+</style>
+<script>
+	function signUp() {
+		alert("정말로 가입 하시겠습니까?");
+		document.getElementById("regform").style.display = "none";
+		document.getElementById("rname").innerHTML = document.form1.name.value;
+		document.getElementById("remail").innerHTML = document.form1.email.value;
+		document.getElementById("result").setAttribute("style","display: block; background-color:KhaKi;");
+	}
+</script>
+</head>
+<body>
+	<h2>회원 가입</h2>
+	<br>
+	<div id="regform">
+		<form name="form1">
+			<hr>
+			<input type="int1" name="int1" size="40" id="inCenter" placeholder="정수 입력" ><br>
+			<input type="int2" name="int2" size="40" id="inCenter" placeholder="정수 입력">
+			<hr>
+			<button type="button" onClick="plus()" style="font-color: red;">+</style></button>
+			<button type="button" onClick="minus()">-</button>
+			<button type="button" onClick="multiple()">*</button>
+			<button type="button" onClick="divs()">/</button>
+			<hr>
+			계산결과: <span id="result"></span>
+				<button type="button" class="delButton" onClick="reset1()">삭제</button>
+		</form>
+	</div>
+	<script>
+		document.getElementById("result").style.display = "none";
+	</script>
+</body>
+</html>
